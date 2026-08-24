@@ -7,7 +7,8 @@
     "dev": "tsx src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "qdrant:check": "tsx src/scripts/check-qdrant.ts"
+    "qdrant:check": "tsx src/scripts/check-qdrant.ts",
+    "pdf:inspect": "tsx src/ingestion/inspect-pdf.ts"
   },
   "keywords": [],
   "author": "",
