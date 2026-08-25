@@ -1,4 +1,5 @@
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
+import { cleanExtractedText } from "../utils/clean-text.js";
 
 // const pdfPath = "data/hoa/Covenants and Restrictions.pdf";
 const pdfPath = "data/hoa/ocr/Covenants and Restrictions OCR Forced.pdf";
@@ -17,7 +18,8 @@ console.log("\nPage text length summary:");
 
 for (const document of documents) {
   const pageNumber = document.metadata.loc?.pageNumber;
-  const characterCount = document.pageContent.length;
+  const cleanedText = cleanExtractedText(document.pageContent);
+  const characterCount = cleanedText.length;
 
   console.log(`Page ${pageNumber}: ${characterCount} characters`);
 }
@@ -34,5 +36,5 @@ for (const pageNumber of pagesToPreview) {
   }
 
   console.log(`\n--- Page ${pageNumber} Preview ---`);
-  console.log(document.pageContent.slice(0, 1200));
+  console.log(cleanExtractedText(document.pageContent).slice(0, 1200));
 }
