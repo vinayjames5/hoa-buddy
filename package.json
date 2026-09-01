@@ -11,6 +11,8 @@
     "embedding:test": "tsx src/scripts/test-embedding.ts",
     "pinecone:stats": "tsx src/scripts/pinecone-stats.ts",
     "ingest:hoa": "tsx src/ingestion/ingest-hoa.ts",
+    "florida:inspect": "tsx src/ingestion/inspect-florida-statutes.ts",
+    "ingest:florida": "tsx src/ingestion/ingest-florida-statutes.ts",
     "retrieve": "tsx src/retrieval/retrieve.ts",
     "retrieval:smoke": "tsx src/evaluation/retrieval-smoke.ts",
     "rag:answer": "tsx src/rag/answer.ts",
