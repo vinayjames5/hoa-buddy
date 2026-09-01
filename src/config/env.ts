@@ -1,10 +1,12 @@
 import "dotenv/config";
 
+type PineconeCloud = "aws";
+
 type EnvConfig = {
   openAiApiKey: string | undefined;
   pineconeApiKey: string | undefined;
   pineconeIndexName: string;
-  pineconeCloud: string;
+  pineconeCloud: PineconeCloud;
   pineconeRegion: string;
 };
 
@@ -23,10 +25,20 @@ const getRequiredEnv = (name: string): string => {
   return value;
 };
 
+const getPineconeCloud = (): PineconeCloud => {
+  const value = getRequiredEnv("PINECONE_CLOUD");
+
+  if (value !== "aws") {
+    throw new Error(`Unsupported PINECONE_CLOUD: ${value}`);
+  }
+
+  return value;
+};
+
 export const env: EnvConfig = {
   openAiApiKey: getOptionalEnv("OPENAI_API_KEY"),
   pineconeApiKey: getOptionalEnv("PINECONE_API_KEY"),
   pineconeIndexName: getRequiredEnv("PINECONE_INDEX_NAME"),
-  pineconeCloud: getRequiredEnv("PINECONE_CLOUD"),
+  pineconeCloud: getPineconeCloud(),
   pineconeRegion: getRequiredEnv("PINECONE_REGION"),
 };

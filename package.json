@@ -9,7 +9,8 @@
     "start": "node dist/index.js",
     "pinecone:check": "tsx src/scripts/check-pinecone.ts",
     "pdf:inspect": "tsx src/ingestion/inspect-pdf.ts",
-    "chunks:inspect": "tsx src/ingestion/inspect-chunks.ts"
+    "chunks:inspect": "tsx src/ingestion/inspect-chunks.ts",
+    "pinecone:create-index": "tsx src/scripts/create-pinecone-index.ts"
   },
   "keywords": [],
   "author": "",
