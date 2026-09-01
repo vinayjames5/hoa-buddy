@@ -2,8 +2,10 @@ import "dotenv/config";
 
 type EnvConfig = {
   openAiApiKey: string | undefined;
-  qdrantUrl: string;
-  qdrantCollection: string;
+  pineconeApiKey: string | undefined;
+  pineconeIndexName: string;
+  pineconeCloud: string;
+  pineconeRegion: string;
 };
 
 const getOptionalEnv = (name: string): string | undefined => {
@@ -23,6 +25,8 @@ const getRequiredEnv = (name: string): string => {
 
 export const env: EnvConfig = {
   openAiApiKey: getOptionalEnv("OPENAI_API_KEY"),
-  qdrantUrl: getRequiredEnv("QDRANT_URL"),
-  qdrantCollection: getRequiredEnv("QDRANT_COLLECTION"),
+  pineconeApiKey: getOptionalEnv("PINECONE_API_KEY"),
+  pineconeIndexName: getRequiredEnv("PINECONE_INDEX_NAME"),
+  pineconeCloud: getRequiredEnv("PINECONE_CLOUD"),
+  pineconeRegion: getRequiredEnv("PINECONE_REGION"),
 };
