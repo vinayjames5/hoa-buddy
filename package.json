@@ -12,6 +12,7 @@
     "pinecone:stats": "tsx src/scripts/pinecone-stats.ts",
     "ingest:hoa": "tsx src/ingestion/ingest-hoa.ts",
     "retrieve": "tsx src/retrieval/retrieve.ts",
+    "retrieval:smoke": "tsx src/evaluation/retrieval-smoke.ts",
     "rag:answer": "tsx src/rag/answer.ts",
     "pdf:inspect": "tsx src/ingestion/inspect-pdf.ts",
     "chunks:inspect": "tsx src/ingestion/inspect-chunks.ts",
