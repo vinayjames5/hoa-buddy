@@ -16,6 +16,7 @@
     "retrieve": "tsx src/retrieval/retrieve.ts",
     "retrieval:smoke": "tsx src/evaluation/retrieval-smoke.ts",
     "rag:answer": "tsx src/rag/answer.ts",
+    "chat": "tsx src/web/server.ts",
     "pdf:inspect": "tsx src/ingestion/inspect-pdf.ts",
     "chunks:inspect": "tsx src/ingestion/inspect-chunks.ts",
     "pinecone:create-index": "tsx src/scripts/create-pinecone-index.ts"
