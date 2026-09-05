@@ -134,6 +134,18 @@ npm run retrieval:smoke
 npm run rag:answer -- "your question"
 ```
 
+## Notebooks
+
+The `notebooks/` folder contains Jupyter notebooks for learning and demo exploration.
+
+Start with:
+
+```text
+notebooks/01-rag-pipeline-lab.ipynb
+```
+
+The notebook calls the existing TypeScript npm scripts instead of reimplementing the RAG pipeline in Python.
+
 ## MVP Status
 
 - TypeScript build passes.
@@ -142,4 +154,3 @@ npm run rag:answer -- "your question"
 - Florida Statutes Chapter 720 ingested.
 - Retrieval smoke test baseline: Top-1 keyword hits 4/5, Top-5 keyword hits 5/5.
 - Grounded answer generation works with HOA and Florida statute citations.
-
